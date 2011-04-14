@@ -5,7 +5,7 @@ import java.util.Random;
 public class Misc {
 
     public static String getRandomString(int length, boolean simple) {
-        simple = true;
+        //simple = true;
         if (!simple) {
             Random rand = new Random();
             StringBuffer sb = new StringBuffer();

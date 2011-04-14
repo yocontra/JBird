@@ -67,6 +67,7 @@ public class Injector {
         method.setMaxStack();
         return method;
     }
+
     //C:\Users\Eric\Documents\RSBot\Scripts\Roaches.jar
     public void inject() {
         for (ClassGen cg : LoadedJar.ClassEntries.values()) {
