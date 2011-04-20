@@ -19,13 +19,9 @@ public class UI {
                 if (f.isDirectory()) {
                     return true;
                 }
-                String extension = IO.getExtension(f);
-                if (extension != null) {
-                    if (extension.equals(extension)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                String extens = IO.getExtension(f);
+                if (extens != null) {
+                    return extens.equals(extension);
                 }
                 return false;
             }

