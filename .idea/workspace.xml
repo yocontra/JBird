@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a893d62-f736-4332-8d0c-e49c42a3bf57" name="Default" comment="" />
+    <list default="true" id="3a893d62-f736-4332-8d0c-e49c42a3bf57" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/JBird_jar.xml" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\.idea\artifacts\Jaybird_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\Jaybird.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\artifacts\Jaybird_jar\Jaybird.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\Application.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\Injector.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\bcel\BCELMethods.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\bcel\JarLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Downloader.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\IO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\LogHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Misc.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Settings.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\UI$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\UI.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\META-INF\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\src\util\misc\Downloader.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\META-INF\MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.java" afterPath="$PROJECT_DIR$/src/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/misc/Settings.java" afterPath="$PROJECT_DIR$/src/util/misc/Settings.java" />
+    </list>
     <ignored path="Jaybird.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,31 +85,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="59" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/misc/UI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Injector.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Injector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="30" selection-start="8592" selection-end="8592" vertical-scroll-proportion="2.8157895">
+            <state line="25" column="36" selection-start="841" selection-end="841" vertical-scroll-proportion="0.64491653">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/misc/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="23" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Network.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/misc/Network.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="84" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,6 +120,10 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
+    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -106,10 +136,11 @@
         <option value="$PROJECT_DIR$/src/util/misc/Downloader.java" />
         <option value="$PROJECT_DIR$/src/util/misc/Misc.java" />
         <option value="$PROJECT_DIR$/src/util/misc/IO.java" />
-        <option value="$PROJECT_DIR$/src/Application.java" />
-        <option value="$PROJECT_DIR$/src/util/misc/Settings.java" />
         <option value="$PROJECT_DIR$/src/util/misc/UI.java" />
         <option value="$PROJECT_DIR$/src/Injector.java" />
+        <option value="$PROJECT_DIR$/src/util/misc/Network.java" />
+        <option value="$PROJECT_DIR$/src/util/misc/Settings.java" />
+        <option value="$PROJECT_DIR$/src/Application.java" />
       </list>
     </option>
   </component>
@@ -147,33 +178,31 @@
     </navigator>
     <panes>
       <pane id="Favorites" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -183,11 +212,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -205,11 +234,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Jaybird" />
+              <option name="myItemId" value="JBird" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -220,13 +249,11 @@
               <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bcel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,7 +406,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Jaybird" />
+      <module name="JBird" />
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -403,7 +430,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="764" extended-state="6" />
+    <frame x="-4" y="-4" width="1688" height="1014" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -411,18 +438,18 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288426" sideWeight="0.23385301" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32927817" sideWeight="0.76391983" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288426" sideWeight="0.76391983" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23608018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23608018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -489,29 +516,45 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/Downloader.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/java/io/InputStreamReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="37" selection-start="371" selection-end="371" vertical-scroll-proportion="0.13662457" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="75" selection-end="75" vertical-scroll-proportion="0.099609375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="59" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0" />
+        <state line="44" column="13" selection-start="1351" selection-end="1399" vertical-scroll-proportion="0.33295062" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Injector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="30" selection-start="8592" selection-end="8592" vertical-scroll-proportion="2.8157895">
+        <state line="40" column="33" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.6736597" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="41" selection-start="590" selection-end="590" vertical-scroll-proportion="0.31228474" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JBird.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="72" selection-start="214" selection-end="214" vertical-scroll-proportion="0.078071184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="23" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="84" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="36" selection-start="841" selection-end="841" vertical-scroll-proportion="0.64491653">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -524,7 +567,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Jaybird:jar</last-edited>
+          <last-edited>JBird:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -573,7 +616,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Jaybird</last-edited>
+          <last-edited>JBird</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

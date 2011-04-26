@@ -5,6 +5,11 @@ import javax.swing.*;
 
 public class Application {
     public static void main(String[] args) {
+        /*
+        double ver = Network.getLatestVersion();
+        if(ver > Settings.VERSION || ver == -1){
+            close("Application is out of date or disabled.");
+        }*/
         System.out.println("Starting JBird v" + Settings.VERSION);
         System.out.println("Created by Contra. Visit RECoders.org");
         String url;
