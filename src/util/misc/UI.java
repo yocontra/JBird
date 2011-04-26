@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
+import static util.misc.IO.getExtension;
+
 public class UI {
 
     public static String getComboInput(String[] options, String title, String comment) {
@@ -19,7 +21,7 @@ public class UI {
                 if (f.isDirectory()) {
                     return true;
                 }
-                String extens = IO.getExtension(f);
+                String extens = getExtension(f);
                 if (extens != null) {
                     return extens.equals(extension);
                 }

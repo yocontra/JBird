@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a893d62-f736-4332-8d0c-e49c42a3bf57" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/JBird_jar.xml" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\.idea\artifacts\Jaybird_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\Jaybird.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\artifacts\Jaybird_jar\Jaybird.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\Application.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\Injector.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\bcel\BCELMethods.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\bcel\JarLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Downloader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\IO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\LogHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Misc.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\Settings.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\UI$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\Jaybird\util\misc\UI.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\production\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\src\util\misc\Downloader.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Eric\Desktop\Projects\JBird\out\META-INF\MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.java" afterPath="$PROJECT_DIR$/src/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/misc/Settings.java" afterPath="$PROJECT_DIR$/src/util/misc/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/misc/LogHandler.java" afterPath="$PROJECT_DIR$/src/util/misc/LogHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/misc/Misc.java" afterPath="$PROJECT_DIR$/src/util/misc/Misc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/misc/UI.java" afterPath="$PROJECT_DIR$/src/util/misc/UI.java" />
     </list>
     <ignored path="Jaybird.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,28 +67,10 @@
       <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="36" selection-start="841" selection-end="841" vertical-scroll-proportion="0.64491653">
+            <state line="20" column="33" selection-start="609" selection-end="609" vertical-scroll-proportion="0.5159332">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Settings.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/misc/Settings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="23" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Network.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/misc/Network.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="84" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -131,16 +92,16 @@
         <option value="$PROJECT_DIR$/src/util/bcel/BCELMethods.java" />
         <option value="$PROJECT_DIR$/src/util/bcel/JarLoader.java" />
         <option value="$PROJECT_DIR$/src/Settings.java" />
-        <option value="$PROJECT_DIR$/src/util/misc/LogHandler.java" />
         <option value="$PROJECT_DIR$/src/trans/Injector.java" />
         <option value="$PROJECT_DIR$/src/util/misc/Downloader.java" />
-        <option value="$PROJECT_DIR$/src/util/misc/Misc.java" />
         <option value="$PROJECT_DIR$/src/util/misc/IO.java" />
-        <option value="$PROJECT_DIR$/src/util/misc/UI.java" />
         <option value="$PROJECT_DIR$/src/Injector.java" />
         <option value="$PROJECT_DIR$/src/util/misc/Network.java" />
         <option value="$PROJECT_DIR$/src/util/misc/Settings.java" />
         <option value="$PROJECT_DIR$/src/Application.java" />
+        <option value="$PROJECT_DIR$/src/util/misc/LogHandler.java" />
+        <option value="$PROJECT_DIR$/src/util/misc/Misc.java" />
+        <option value="$PROJECT_DIR$/src/util/misc/UI.java" />
       </list>
     </option>
   </component>
@@ -207,46 +168,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JBird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JBird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="misc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JBird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JBird" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,7 +366,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288426" sideWeight="0.76391983" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23608018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23608018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -491,29 +412,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/util/bcel/JarLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="24" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/LogHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="295" selection-end="295" vertical-scroll-proportion="0.41062802" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/Misc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="148" selection-end="148" vertical-scroll-proportion="0.13662457" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/misc/IO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="22" selection-start="913" selection-end="913" vertical-scroll-proportion="0.775076" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/bcel/BCELMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/java/io/InputStreamReader.java">
@@ -526,11 +427,6 @@
         <state line="40" column="33" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.6736597" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/misc/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="41" selection-start="590" selection-end="590" vertical-scroll-proportion="0.31228474" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JBird.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="72" selection-start="214" selection-end="214" vertical-scroll-proportion="0.078071184">
@@ -540,21 +436,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/misc/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="23" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+        <state line="6" column="27" selection-start="176" selection-end="176" vertical-scroll-proportion="0.15477997">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/misc/Network.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="84" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+        <state line="12" column="74" selection-start="452" selection-end="452" vertical-scroll-proportion="0.23216996">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_22/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="19" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.3323217">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/LogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="19" selection-start="447" selection-end="447" vertical-scroll-proportion="0.59332323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/Misc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="393" selection-end="393" vertical-scroll-proportion="0.2837633">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/misc/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="32" selection-start="919" selection-end="919" vertical-scroll-proportion="0.6707132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/bcel/BCELMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="19" selection-start="4252" selection-end="4252" vertical-scroll-proportion="0.28072837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/bcel/JarLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="116" selection-start="2698" selection-end="2698" vertical-scroll-proportion="0.35508347">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="841" selection-end="841" vertical-scroll-proportion="0.64491653">
+        <state line="20" column="33" selection-start="609" selection-end="609" vertical-scroll-proportion="0.5159332">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

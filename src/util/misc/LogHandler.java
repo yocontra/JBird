@@ -1,5 +1,7 @@
 package util.misc;
 
+import static util.misc.Settings.*;
+
 public class LogHandler {
 
     private final String Name;
@@ -13,12 +15,12 @@ public class LogHandler {
     }
 
     public void debug(String msg) {
-        if (Settings.DEBUG) {
-            System.out.println("[" + Name + "]" + "[DEBUG]" + msg);
+        if (DEBUG) {
+            log("[DEBUG]" + msg);
         }
     }
 
     public void error(String msg) {
-        System.out.println("[" + Name + "]" + "[ERROR]" + msg);
+        log("[ERROR]" + msg);
     }
 }
